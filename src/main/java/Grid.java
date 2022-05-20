@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Grid {
     public Set<Cell> cells = new HashSet<>();
+
     public void addCell(Cell cell) {
         cells.add(cell);
     }
@@ -23,7 +24,9 @@ public class Grid {
         return neighbours;
     }
 
-    private boolean isAlive(Cell newCell) {
+
+
+    public boolean isAlive(Cell newCell) {
         return cells.contains(newCell);
     }
 

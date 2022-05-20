@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="GameOfLifeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-05-20T05:53:39" hostname="ujjwalkumarthoughtworkscoms-MacBook-Pro.local" time="0.018">
+  <properties/>
+  <testcase name="aCellWith2Or3neighboursShouldLiveInNextIteration()" classname="GameOfLifeTest" time="0.018"/>
+  <system-out><![CDATA[2
+1
+4
+
+1
+1
+3
+
+2
+2
+4
+
+5
+5
+0
+
+1
+2
+3
+
+3
+1
+2
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

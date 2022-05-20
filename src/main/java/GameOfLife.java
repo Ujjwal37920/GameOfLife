@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 
 public class GameOfLife {
@@ -12,18 +11,19 @@ public class GameOfLife {
         Grid newGrid=new Grid();
         for(Cell cell: grid.cells){
             int numberOfNeighbours = 0;
-            List<Cell> neighbours =  grid.getNeighbours(cell);
+            List<Cell> possibleAliveCells = grid.getAllNeighbours(cell);
+            for(Cell possibleAliveCell: possibleAliveCells){
+                List<Cell> possibleNeighbour = grid.getAllAliveNeighbours(possibleAliveCell);
+                if(possibleNeighbour.size()==3 && !grid.isAlive(possibleAliveCell)){
+                    newGrid.addCell(possibleAliveCell);
+                }
+            }
+            List<Cell> neighbours =  grid.getAllAliveNeighbours(cell);
             numberOfNeighbours = neighbours.size();
             if(willRemainAlive(numberOfNeighbours)) {
                 newGrid.addCell(cell);
 
             }
-
-            System.out.println(cell.xCoordinate);
-            System.out.println(cell.yCoordinate);
-            System.out.println(numberOfNeighbours);
-            System.out.println();
-
 
         }
         return newGrid;

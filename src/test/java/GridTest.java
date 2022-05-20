@@ -12,7 +12,7 @@ public class GridTest {
         Grid grid = new Grid();
         grid.addCell(new Cell(0,0));
 
-        List<Cell> getNeighbours = grid.getNeighbours(new Cell(0,0));
+        List<Cell> getNeighbours = grid.getAllAliveNeighbours(new Cell(0,0));
 
         assertEquals(0, getNeighbours.size());
     }
@@ -23,8 +23,8 @@ public class GridTest {
         grid.addCell(new Cell(0,0));
         grid.addCell(new Cell(1,0));
 
-        List<Cell> firstCellNeighbour =  grid.getNeighbours(new Cell(0,0));
-        List<Cell> secondCellNeighbour = grid.getNeighbours(new Cell(1,0));
+        List<Cell> firstCellNeighbour =  grid.getAllAliveNeighbours(new Cell(0,0));
+        List<Cell> secondCellNeighbour = grid.getAllAliveNeighbours(new Cell(1,0));
 
         assertArrayEquals(new Cell[]{new Cell(1,0)}, firstCellNeighbour.toArray());
         assertArrayEquals(new Cell[]{new Cell(0,0)}, secondCellNeighbour.toArray());
@@ -39,7 +39,7 @@ public class GridTest {
         grid.addCell(firstCell);
         grid.addCell(secondCell);
 
-        List<Cell> firstCellNeighbour = grid.getNeighbours(firstCell);
+        List<Cell> firstCellNeighbour = grid.getAllAliveNeighbours(firstCell);
 
         assertEquals(0, firstCellNeighbour.size());
     }
@@ -54,7 +54,7 @@ public class GridTest {
             }
         }
 
-        List<Cell> neighbours = grid.getNeighbours(cell);
+        List<Cell> neighbours = grid.getAllAliveNeighbours(cell);
 
         assertEquals(8,neighbours.size());
     }
@@ -73,7 +73,7 @@ public class GridTest {
             }
         }
         System.out.println(expectedNeighbours.size());
-        List<Cell> neighbours = grid.getNeighbours(cell);
+        List<Cell> neighbours = grid.getAllAliveNeighbours(cell);
         assertTrue(neighbours.containsAll(expectedNeighbours));
     //    assertArrayEquals(expectedNeighbours.toArray(), neighbours.toArray());
     }

@@ -44,20 +44,7 @@ public class GridTest {
         assertEquals(0, firstCellNeighbour.size());
     }
 
-    @Test
-    void shouldReturn8NeighboursWhenACellWith8AliveNeighboursIsCreated() {
-        Grid grid = new Grid();
-        Cell cell = new Cell(4, 4);
-        for(int i=-1;i<2;i++){
-            for(int j=-1;j<2;j++){
-                grid.addCell(new Cell(cell.xCoordinate+i, cell.yCoordinate+j));
-            }
-        }
 
-        List<Cell> neighbours = grid.getAllAliveNeighbours(cell);
-
-        assertEquals(8,neighbours.size());
-    }
 
     @Test
     void shouldReturnExactNeighbourCellsWhenACellWith8AliveNeighboursIsCreated() {
@@ -75,6 +62,7 @@ public class GridTest {
         System.out.println(expectedNeighbours.size());
         List<Cell> neighbours = grid.getAllAliveNeighbours(cell);
         assertTrue(neighbours.containsAll(expectedNeighbours));
+        assertEquals(8,neighbours.size());
     //    assertArrayEquals(expectedNeighbours.toArray(), neighbours.toArray());
     }
 }

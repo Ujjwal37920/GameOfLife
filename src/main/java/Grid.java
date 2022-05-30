@@ -8,20 +8,7 @@ public class Grid {
     }
 
     public List<Cell> getAllAliveNeighbours(Cell cell) {
-//        List<Cell> neighbours = new ArrayList<>();
-//        int cellXCoordinate = cell.xCoordinate;
-//        int cellYCoordinate = cell.yCoordinate;
-//        for(int dy=-1;dy<2;dy++) {
-//            for (int dx = -1; dx < 2; dx++) {
-//                Cell newCell = new Cell(cellXCoordinate + dx, cellYCoordinate + dy);
-//                if (isAlive(newCell) & !cell.equals(newCell) ){
-//                    neighbours.add(newCell);
-//
-//                }
-//            }
-//
-//        }
-//        return neighbours;
+
         List<Cell> neighbours = new ArrayList<>();
         List<Cell> allNeighbours = getAllNeighbours(cell);
         for(Cell newCell: allNeighbours){

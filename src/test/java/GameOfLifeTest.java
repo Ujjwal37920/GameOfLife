@@ -14,7 +14,7 @@ public class GameOfLifeTest {
 
         Grid newGrid = gameOfLife.nextIteration();
 
-        assertFalse(newGrid.isAlive(new Cell(1,1)));
+        assertFalse(newGrid.isAlive(new Cell(5,1)));
     }
 
     @Test
@@ -62,7 +62,7 @@ public class GameOfLifeTest {
 
         Grid newGrid = gameOfLife.nextIteration();
 
-        assertTrue(newGrid.isAlive(new Cell(2,0)));
+        assertTrue(newGrid.isAlive(new Cell(3,2)));
     }
 
 
